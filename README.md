@@ -126,7 +126,7 @@ gtkwave dump.vcd
 ### OpenLane Flow
 
 ```bash
-./flow.tcl -design <design_folder>
+./flow.tcl -design /home/asus/calculator_design
 ```
 
 ---
