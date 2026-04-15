@@ -83,6 +83,60 @@ Conclusion
 
 This project bridges the gap between digital design and physical implementation. It demonstrates not only functional correctness at the RTL level but also the ability to carry a design through to fabrication-ready layout.
 
+## Project Artifacts
+
+### RTL Design
+
+* `design.v` contains the full Verilog implementation of the 4-bit calculator.
+* Modular structure includes adder, subtractor, multiplier, and divider.
+
+### Testbench
+
+* `tb.v` verifies functionality across all operations.
+* Includes test cases for normal and edge conditions (e.g., division by zero).
+
+### Simulation Results
+
+* Waveforms generated using GTKWave confirm correct behavior of all operations.
+* Outputs match expected values for each opcode.
+
+### Schematic
+
+* Synthesized schematic shows gate-level structure of the design.
+* Helps visualize how RTL is mapped to logic gates.
+
+### Layout (GDSII)
+
+* Final layout generated using OpenLane (Sky130 PDK).
+* Viewed in KLayout.
+* Dense routing and standard-cell placement reflect automated ASIC design flow.
+
+---
+
+## How to Run
+
+### Simulation
+
+```bash
+iverilog design.v tb.v -o out
+vvp out
+gtkwave dump.vcd
+```
+
+### OpenLane Flow
+
+```bash
+./flow.tcl -design <design_folder>
+```
+
+---
+
+## Notes
+
+* Layout may appear dense due to standard-cell based design methodology.
+* Functionality was verified before physical design to ensure correctness.
+
+
 
 BALA SUBRAHMANYAM KANURI
 VLSI ASPIRANT
